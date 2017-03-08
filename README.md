@@ -1,5 +1,5 @@
 # alfa-checkbox
-### checkbox passing checked and unchecked items to server. 
+### jquery plugin for checkbox passing checked and unchecked items to server. 
 Native `<input type="checkbox">` in `<form>` `post` passes only checked items as string "on". Unchecked items data is lost. It is impossible to uncheck something!<br>This plugin will pass data for each checkbox as string "true" or "false"
 
 #### live demo:

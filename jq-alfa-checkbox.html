@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link href="tests.css" rel="stylesheet" />
+
+    <script src="../js/jquery.js"></script>
+    <script src="../js/jq-alfa-checkbox.js"></script>
+
+    <title>alfa-checkbox</title>
+
+    <style id="alfa-checkbox-override">
+        /* override default style */
+
+        .alfa-checkbox, .alfa-checkbox label {
+            width: 20px !important;
+            height: 20px !important;
+        }
+        .alfa-checkbox label {
+            background: #ffdc7d !important; /* box background color */
+        }
+        .alfa-checkbox label:after {
+            border-color: lime !important; /* checkmark color */
+        }
+            .alfa-checkbox input[disabled] ~ label {
+                border-color: red !important;
+                background: #808080 !important;
+            }
+    </style>
+</head>
+<body>
+
+    <h2>jq-alfa-checkbox.js</h2>
+    <p style="font-size:.8em;">
+    &lt;form method="post" &gt; using this plugin, sends data from ALL checkboxes as string "true or "false" <br />
+        default behaviour of &lt;input type="checkbox" &gt; sends ONLY checked items as string "on" loosing data of unchecked items
+    </p>
+        <form style="border:1px solid silver; padding:10px;">
+
+        data field 1 <input type="checkbox" class="alfa-checkbox" name="dataField1" /><br /><br />
+        data field 2 <input type="checkbox" class="alfa-checkbox" name="dataField2" disabled /> disabled<br /><br />
+
+        <label for="dataField3">data field 3 </label><input type="checkbox" class="alfa-checkbox" name="dataField3" /> &nbsp;&nbsp;&nbsp;
+        <label for="dataField4">data field 4 </label><input type="checkbox" class="alfa-checkbox" name="dataField4" /> (with &lt;label&gt; tag)<br /><br />
+
+
+
+        <input type="checkbox" class="alfa-checkbox" name="dataField5" /> data field 5 <br /><br />
+        <input type="checkbox" class="alfa-checkbox" name="dataField6" /> data field 6 <br /><br />
+
+        <button type="submit">submit</button>
+    </form>
+
+    <script>
+        $(document).ready(function () {
+            $.alfaCheckbox('.alfa-checkbox', {
+                onChange: function () { formDirty = true; $('button[type=submit]').show(); }
+            });
+        });
+    </script>
+   
+    <br /><br />
+    dataField1 <a href="#" onclick="
+    (function () {
+        $.alfaCheckbox('#dataField1', { set: true });
+    })()
+    ">set true</a> &nbsp;
+
+    <a href="#" onclick="
+    (function () {
+        $.alfaCheckbox('#dataField1', { set: false });
+    })()
+    ">set false</a><br /><br />
+
+    dataField2 <a href="#" onclick="
+    (function () {
+        $.alfaCheckbox('#dataField2', { set: true });
+    })()
+    ">set true</a> &nbsp;
+
+    <a href="#" onclick="
+    (function () {
+        $.alfaCheckbox('#dataField2', { set: false });
+    })()
+    ">set false</a> &nbsp;&nbsp;&nbsp; (disabled)<br /><br />
+
+    dataField3 <a href="#" onclick="
+    (function () {
+        $.alfaCheckbox('#dataField3', { set: true });
+    })()
+    ">set true</a> &nbsp;
+
+    <a href="#" onclick="
+    (function () {
+        $.alfaCheckbox('#dataField3', { set: false });
+    })()
+    ">set false</a>
+
+</body>
+</html>

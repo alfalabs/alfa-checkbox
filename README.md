@@ -2,7 +2,7 @@
 ### checkbox passing checked and unchecked items to server. 
 Native `<input type="checkbox">` in `<form>` `post` passes only checked items as string "on". Unchecked items data is lost. It is impossible to uncheck something!<br>This plugin will pass data for each checkbox as string "true" or "false"
 
-#### dependency: jquery
+#### dependency: jquery.slim
 
 CSS `<style>` tag is injected into `<head>` it can be overriden by user `<style>` set in `<body>` with `!important;` directive<br>
 global CSS class name used: `alfa-checkbox` see [example](jq-alfa-checkbox.html) with overriden styles.

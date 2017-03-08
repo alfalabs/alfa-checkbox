@@ -23,8 +23,9 @@ unique `name` property is required! (needed for posting `<form>` data and to ass
 ```javascript
 $(document).ready(function () {
 
+	// initialize all checkboxes
     $.alfaCheckbox('.alfa-checkbox', {
-		// optional callback function:
+		// optional callback function example:
         onChange: function () { formDirty = true; $('button[type=submit]').show(); }
     });
 

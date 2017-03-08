@@ -1,4 +1,4 @@
-﻿/*  jq-alfa-checkbox.js  17.3.8
+﻿/*  jq-alfa-checkbox.js  17.3.8 (c) MIT alfalabs.net
 
     dependency: jquery
 

@@ -24,12 +24,11 @@ unique `name` property is required! (needed for posting `<form>` data and to ass
 $(document).ready(function () {
 
     $.alfaCheckbox('.alfa-checkbox', {
-	// optional callback function:
+		// optional callback function:
         onChange: function () { formDirty = true; $('button[type=submit]').show(); }
     });
 
     // to set value of checkbox programmatically:
-
     $.alfaCheckbox('#id', {set:true});
 
 });
